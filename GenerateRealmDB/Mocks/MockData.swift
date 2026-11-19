@@ -1,5 +1,5 @@
 //
-//  MocData.swift
+//  MockData.swift
 //  GenerateRealmDB
 //
 //  Created by Дмитро on 19.11.2026.

@@ -39,9 +39,18 @@ final class BookDetailViewController: BaseVC {
 }
 
 extension BookDetailViewController: BookDetailViewDelegate {
-
+    
     func bookDetailViewDidTapAuthor(_ view: BookDetailView) {
         print("BookDetailViewController: bookDetailViewDidTapAuthor")
+        let viewControllers = navigationController?.viewControllers ?? []
+
+        if viewControllers.count >= 2, viewControllers[viewControllers.count - 2] is AuthorViewController {
+            navigationController?.popViewController(animated: true)
+            return
+        }
+
+        let authorVC = AuthorViewController(author: author)
+        navigationController?.pushViewController(authorVC, animated: true)
     }
 }
 

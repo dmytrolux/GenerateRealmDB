@@ -43,10 +43,18 @@ final class BookCell: UITableViewCell {
         titleLabel.text = nil
         authorLabel.text = nil
     }
+    
+    func configure(book: Book) {
+          titleLabel.text = book.title
+        accessoryType = .disclosureIndicator
+        selectionStyle = .default
+      }
 
     func configure(book: Book, author: Author) {
         titleLabel.text = book.title
         authorLabel.text = author.fullName
+        accessoryType = .disclosureIndicator
+        selectionStyle = .default
     }
 
     private func setupLayout() {
@@ -55,7 +63,6 @@ final class BookCell: UITableViewCell {
 
         NSLayoutConstraint.activate([
            
-
             titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12),
             titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 12),
             titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -12),
