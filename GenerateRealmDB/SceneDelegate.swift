@@ -14,10 +14,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
  
         guard let windowScene = (scene as? UIWindowScene) else { return }
-        let window = UIWindow(windowScene: windowScene)
-        window.windowScene = windowScene
-        
-        let vc = ViewController()
+        let window = UIWindow(windowScene: windowScene)        
+//        let vc = BookDetailViewController(book: MockLib.authors[0].books[0], author: MockLib.authors[0])
+        let vc = BooksViewController()
         let navigationController = BaseNC(rootViewController: vc)
         
         window.rootViewController = navigationController

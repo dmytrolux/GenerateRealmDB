@@ -18,7 +18,7 @@ class BaseVC: UIViewController {
     }
     
     override var prefersStatusBarHidden: Bool {
-        return true
+        return false
     }
     
     override var prefersHomeIndicatorAutoHidden: Bool {
@@ -27,7 +27,7 @@ class BaseVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.hidesBackButton = true
+        navigationItem.hidesBackButton = false
     }
 }
 
@@ -47,12 +47,12 @@ class BaseNC: UINavigationController {
     }
     
     override var prefersStatusBarHidden: Bool {
-        return true
+        return false
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationBar.isHidden = true
+        navigationBar.isHidden = false
     }
 }
 
