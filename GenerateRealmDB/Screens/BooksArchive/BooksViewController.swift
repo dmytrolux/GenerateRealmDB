@@ -9,10 +9,19 @@ import UIKit
 
 final class BooksViewController: BaseVC {
     
-    private let storage: BookStorageProtocol = RealmManager(generator: MockDataGenerator())
+    private let storage: BookStorageProtocol
 
     private let booksView = BooksView()
     private var items: [BookItem] = []
+    
+    init(storage: BookStorageProtocol) {
+        self.storage = storage
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func loadView() {
         view = booksView

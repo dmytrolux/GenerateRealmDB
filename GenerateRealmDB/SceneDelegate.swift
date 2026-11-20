@@ -17,19 +17,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
  
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)        
-
-        let vc = BooksViewController()
+        
+        let storage = RealmManager(generator: MockDataGenerator())
+        let vc = BooksViewController(storage: storage)
         let navigationController = BaseNC(rootViewController: vc)
         
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
         self.window = window
-        
-//        RealmManager(generator: MockDataGenerator()).fetchBooks{ items in
-//            print("Items: \(items.count)")
-//            print(items[5].book.title, "-", items[5].author.fullName)
-//            
-//        }
         
     }
 
