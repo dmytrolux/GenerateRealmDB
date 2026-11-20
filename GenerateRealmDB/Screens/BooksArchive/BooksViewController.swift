@@ -36,6 +36,12 @@ final class BooksViewController: BaseVC {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Generate", style: .plain, target: self, action: #selector(generateTapped))
         
         booksView.delegate = self
+        
+        if !storage.isEmpty() {
+            navigationItem.rightBarButtonItem?.isEnabled = false
+            booksView.setLoading(true)
+            loadBooks()
+        }
     }
 
     @objc private func generateTapped() {

@@ -12,6 +12,7 @@ import RealmSwift
 protocol BookStorageProtocol {
     func generateData(completion: @escaping () -> () )
     func fetchBooks(competion: @escaping ([BookItem]) -> () )
+    func isEmpty() -> Bool
 }
 
 final class RealmManager: BookStorageProtocol{
@@ -91,7 +92,9 @@ final class RealmManager: BookStorageProtocol{
         }
     }
     
-    
-    
+    func isEmpty() -> Bool {
+        let realm = try! Realm()
+        return realm.objects(BookObject.self).isEmpty
+    }
     
 }
