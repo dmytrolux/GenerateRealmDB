@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 110;
+	objectVersion = 77;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04C80A02D9A77D5CF37F6945 /* Pods_GenerateRealmDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25C0A3E8D450B644E4A2C42E /* Pods_GenerateRealmDB.framework */; };
 		6698BDA930AF75F200EB055C /* BookDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6698BDA830AF75F100EB055C /* BookDetailViewController.swift */; };
 		6698BDAD30AF770E00EB055C /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6698BDAC30AF76FD00EB055C /* MockData.swift */; };
 		6698BDAF30AF77D500EB055C /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6698BDAE30AF77C000EB055C /* Models.swift */; };
@@ -25,6 +26,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		25C0A3E8D450B644E4A2C42E /* Pods_GenerateRealmDB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GenerateRealmDB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E5066AB3738CD09A009B3B8 /* Pods-GenerateRealmDB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GenerateRealmDB.release.xcconfig"; path = "Target Support Files/Pods-GenerateRealmDB/Pods-GenerateRealmDB.release.xcconfig"; sourceTree = "<group>"; };
+		618243CA340AE34FAB5F3F24 /* Pods-GenerateRealmDB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GenerateRealmDB.debug.xcconfig"; path = "Target Support Files/Pods-GenerateRealmDB/Pods-GenerateRealmDB.debug.xcconfig"; sourceTree = "<group>"; };
 		6698BDA830AF75F100EB055C /* BookDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailViewController.swift; sourceTree = "<group>"; };
 		6698BDAC30AF76FD00EB055C /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 		6698BDAE30AF77C000EB055C /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
@@ -47,12 +51,32 @@
 /* Begin PBXFrameworksBuildPhase section */
 		669DFED330AF547E00E1CCB5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
 			files = (
+				04C80A02D9A77D5CF37F6945 /* Pods_GenerateRealmDB.framework in Frameworks */,
 			);
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		011E6AEC37D6A9AAAE27885E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				25C0A3E8D450B644E4A2C42E /* Pods_GenerateRealmDB.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2DB4E04E3381C8CB85B3C04A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				618243CA340AE34FAB5F3F24 /* Pods-GenerateRealmDB.debug.xcconfig */,
+				4E5066AB3738CD09A009B3B8 /* Pods-GenerateRealmDB.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		6698BDA630AF759200EB055C /* Screens */ = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +137,8 @@
 			children = (
 				669DFEFA30AF58AE00E1CCB5 /* GenerateRealmDB */,
 				669DFED730AF547E00E1CCB5 /* Products */,
+				2DB4E04E3381C8CB85B3C04A /* Pods */,
+				011E6AEC37D6A9AAAE27885E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -155,11 +181,15 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 669DFEE930AF548000E1CCB5 /* Build configuration list for PBXNativeTarget "GenerateRealmDB" */;
 			buildPhases = (
+				E35874FF3C9FE975573065EA /* [CP] Check Pods Manifest.lock */,
 				669DFED230AF547E00E1CCB5 /* Sources */,
 				669DFED330AF547E00E1CCB5 /* Frameworks */,
 				669DFED430AF547E00E1CCB5 /* Resources */,
+				FC29F7FFE978A906E2114273 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
+			);
+			dependencies = (
 			);
 			name = GenerateRealmDB;
 			productName = GenerateRealmDB;
@@ -203,16 +233,61 @@
 /* Begin PBXResourcesBuildPhase section */
 		669DFED430AF547E00E1CCB5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
 			files = (
 				669DFEFB30AF58AE00E1CCB5 /* Assets.xcassets in Resources */,
 				669DFEFD30AF58AE00E1CCB5 /* LaunchScreen.storyboard in Resources */,
 			);
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E35874FF3C9FE975573065EA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GenerateRealmDB-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FC29F7FFE978A906E2114273 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GenerateRealmDB/Pods-GenerateRealmDB-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GenerateRealmDB/Pods-GenerateRealmDB-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GenerateRealmDB/Pods-GenerateRealmDB-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		669DFED230AF547E00E1CCB5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
 			files = (
 				6698BDBC30AFA71100EB055C /* BookCell.swift in Sources */,
 				669DFEFE30AF58AE00E1CCB5 /* VC+NavVC.swift in Sources */,
@@ -228,6 +303,7 @@
 				6698BDAD30AF770E00EB055C /* MockData.swift in Sources */,
 				6698BDA930AF75F200EB055C /* BookDetailViewController.swift in Sources */,
 			);
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
@@ -243,8 +319,9 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		669DFEEA30AF548000E1CCB5 /* Debug configuration for PBXNativeTarget "GenerateRealmDB" */ = {
+		669DFEEA30AF548000E1CCB5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 618243CA340AE34FAB5F3F24 /* Pods-GenerateRealmDB.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -278,8 +355,9 @@
 			};
 			name = Debug;
 		};
-		669DFEEB30AF548000E1CCB5 /* Release configuration for PBXNativeTarget "GenerateRealmDB" */ = {
+		669DFEEB30AF548000E1CCB5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4E5066AB3738CD09A009B3B8 /* Pods-GenerateRealmDB.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -313,7 +391,7 @@
 			};
 			name = Release;
 		};
-		669DFEEC30AF548000E1CCB5 /* Debug configuration for PBXProject "GenerateRealmDB" */ = {
+		669DFEEC30AF548000E1CCB5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -351,7 +429,7 @@
 				DEVELOPMENT_TEAM = 2S8FW6N8Q7;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -377,7 +455,7 @@
 			};
 			name = Debug;
 		};
-		669DFEED30AF548000E1CCB5 /* Release configuration for PBXProject "GenerateRealmDB" */ = {
+		669DFEED30AF548000E1CCB5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -415,7 +493,7 @@
 				DEVELOPMENT_TEAM = 2S8FW6N8Q7;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -440,21 +518,22 @@
 		669DFED130AF547E00E1CCB5 /* Build configuration list for PBXProject "GenerateRealmDB" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				669DFEEC30AF548000E1CCB5 /* Debug configuration for PBXProject "GenerateRealmDB" */,
-				669DFEED30AF548000E1CCB5 /* Release configuration for PBXProject "GenerateRealmDB" */,
+				669DFEEC30AF548000E1CCB5 /* Debug */,
+				669DFEED30AF548000E1CCB5 /* Release */,
 			);
+			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 		669DFEE930AF548000E1CCB5 /* Build configuration list for PBXNativeTarget "GenerateRealmDB" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				669DFEEA30AF548000E1CCB5 /* Debug configuration for PBXNativeTarget "GenerateRealmDB" */,
-				669DFEEB30AF548000E1CCB5 /* Release configuration for PBXNativeTarget "GenerateRealmDB" */,
+				669DFEEA30AF548000E1CCB5 /* Debug */,
+				669DFEEB30AF548000E1CCB5 /* Release */,
 			);
+			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
 	rootObject = 669DFECE30AF547E00E1CCB5 /* Project object */;
-	validationLevel = 1;
 }
