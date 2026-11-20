@@ -25,7 +25,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window.makeKeyAndVisible()
         self.window = window
         
-        realmTest()
+        generatorTest()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -56,23 +56,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
     }
     
-    func realmTest(){
-        let realm = try! Realm()
+    func generatorTest(){
+       let mockGenerator = MockDataGenerator()
+        let authors = mockGenerator.generateAuthors()
+        print("authors: \(authors)")
         
-        let book = BookObject()
-        book.title = "Test book title"
-        book.year = 1995
         
-        let author = AuthorObject()
-        author.fullName = "Dmytro Sergiyovich Pryshliak"
-        author.books.append(book)
-        
-        try! realm.write {
-            realm.add(author)
-        }
-        
-        print("Authors: \(realm.objects(AuthorObject.self).count)")
-        print("Books: \(realm.objects(BookObject.self).count)")
     }
 
 
