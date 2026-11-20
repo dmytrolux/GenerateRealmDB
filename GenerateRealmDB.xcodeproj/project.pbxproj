@@ -86,9 +86,9 @@
 		6698BDA630AF759200EB055C /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				6698BDB630AF9B9900EB055C /* BooksArchive */,
-				6698BDBD30AFB2D000EB055C /* Author */,
+				6698BDB630AF9B9900EB055C /* Books */,
 				6698BDB330AF85F300EB055C /* BookDetail */,
+				6698BDBD30AFB2D000EB055C /* Author */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -96,8 +96,8 @@
 		6698BDA730AF759700EB055C /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				6698BDC230B047D800EB055C /* RealmModels.swift */,
 				6698BDAE30AF77C000EB055C /* Models.swift */,
+				6698BDC230B047D800EB055C /* RealmModels.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -120,14 +120,14 @@
 			path = BookDetail;
 			sourceTree = "<group>";
 		};
-		6698BDB630AF9B9900EB055C /* BooksArchive */ = {
+		6698BDB630AF9B9900EB055C /* Books */ = {
 			isa = PBXGroup;
 			children = (
 				6698BDB730AF9BA000EB055C /* BooksViewController.swift */,
 				6698BDB930AF9BC400EB055C /* BooksView.swift */,
 				6698BDBB30AFA70F00EB055C /* BookCell.swift */,
 			);
-			path = BooksArchive;
+			path = Books;
 			sourceTree = "<group>";
 		};
 		6698BDBD30AFB2D000EB055C /* Author */ = {
@@ -148,6 +148,15 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		6698BDC930B0919D00EB055C /* App */ = {
+			isa = PBXGroup;
+			children = (
+				669DFEF330AF58AE00E1CCB5 /* AppDelegate.swift */,
+				669DFEF830AF58AE00E1CCB5 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
 		669DFECD30AF547E00E1CCB5 = {
 			isa = PBXGroup;
 			children = (
@@ -166,24 +175,23 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		669DFEF230AF58AE00E1CCB5 /* Helpers */ = {
+		669DFEF230AF58AE00E1CCB5 /* Base */ = {
 			isa = PBXGroup;
 			children = (
 				669DFEF130AF58AE00E1CCB5 /* VC+NavVC.swift */,
 			);
-			path = Helpers;
+			path = Base;
 			sourceTree = "<group>";
 		};
 		669DFEFA30AF58AE00E1CCB5 /* GenerateRealmDB */ = {
 			isa = PBXGroup;
 			children = (
-				669DFEF830AF58AE00E1CCB5 /* SceneDelegate.swift */,
-				669DFEF330AF58AE00E1CCB5 /* AppDelegate.swift */,
-				6698BDC430B0602E00EB055C /* Services */,
-				669DFEF230AF58AE00E1CCB5 /* Helpers */,
-				6698BDA630AF759200EB055C /* Screens */,
+				6698BDC930B0919D00EB055C /* App */,
 				6698BDA730AF759700EB055C /* Models */,
+				6698BDC430B0602E00EB055C /* Services */,
 				6698BDB030AF80C700EB055C /* Mocks */,
+				6698BDA630AF759200EB055C /* Screens */,
+				669DFEF230AF58AE00E1CCB5 /* Base */,
 				669DFEF430AF58AE00E1CCB5 /* Assets.xcassets */,
 				669DFEF530AF58AE00E1CCB5 /* Info.plist */,
 				669DFEF730AF58AE00E1CCB5 /* LaunchScreen.storyboard */,
@@ -358,6 +366,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -394,6 +403,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

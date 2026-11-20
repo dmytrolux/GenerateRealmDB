@@ -32,9 +32,7 @@ final class RealmManager: BookStorageProtocol{
             let realm = try! Realm()
             try! realm.write {
                 
-                if !self.isEmpty(){
-                    realm.deleteAll()
-                }
+                realm.deleteAll()
                 
                 for author in generatedAuthors {
                     let authorObject = AuthorObject()
@@ -85,8 +83,6 @@ final class RealmManager: BookStorageProtocol{
                 let book = Book(title: bookObject.title, year: bookObject.year)
                 items.append(BookItem(book: book, author: author))
                 
-                
-                 
             }
             
             items.shuffle()

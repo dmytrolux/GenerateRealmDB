@@ -6,8 +6,6 @@
 //
 
 import UIKit
-import RealmSwift
-import Realm
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 

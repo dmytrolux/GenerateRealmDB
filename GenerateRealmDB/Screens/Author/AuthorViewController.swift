@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class AuthorViewController: UIViewController {
+final class AuthorViewController: BaseVC {
 
     private let author: Author
     private let authorView = AuthorView()
