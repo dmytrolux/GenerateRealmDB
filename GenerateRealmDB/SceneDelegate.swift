@@ -59,7 +59,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func generatorTest(){
        let mockGenerator = MockDataGenerator()
         let authors = mockGenerator.generateAuthors()
-        print("authors: \(authors)")
+        let booksCount = authors.reduce(0){$0+$1.books.count}
+        
+        print("authors: \(authors.count)")
+        print("Books: \(booksCount)")
+        
+        print(authors[0].fullName, "-", authors[0].books[0].title, authors[0].books[0].year)
         
         
     }
