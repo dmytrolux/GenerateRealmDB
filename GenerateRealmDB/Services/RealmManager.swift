@@ -89,6 +89,8 @@ final class RealmManager: BookStorageProtocol{
                  
             }
             
+            items.shuffle()
+            
             print("Fetched books in \(Date().timeIntervalSince(currentTime)) sec")
             
             DispatchQueue.main.async {
