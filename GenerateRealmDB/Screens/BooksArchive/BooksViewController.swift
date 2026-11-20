@@ -12,7 +12,7 @@ final class BooksViewController: BaseVC {
     private let storage: BookStorageProtocol = RealmManager(generator: MockDataGenerator())
 
     private let booksView = BooksView()
-    private var items: [(book: Book, author: Author)] = []
+    private var items: [BookItem] = []
 
     override func loadView() {
         view = booksView
@@ -35,14 +35,22 @@ final class BooksViewController: BaseVC {
         
         storage.generateData { [weak self] in
             guard let self else { return }
-            // TODO: На UI поки мок дані
-            self.items = MockLib.bookPairs
-            self.booksView.setLoading(false)
-            self.booksView.configure(items: self.items)
-            self.navigationItem.rightBarButtonItem?.isHidden = true
+            
+            self.loadBooks()
         }
         
         
+    }
+    
+    private func loadBooks(){
+        storage.fetchBooks { [weak self] items in
+            guard let self else {return}
+            
+            self.items = items
+            self.booksView.setLoading(false)
+            self.booksView.configure(items: items)
+            self.navigationItem.rightBarButtonItem?.isHidden = true
+        }
     }
 }
 

@@ -25,11 +25,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window.makeKeyAndVisible()
         self.window = window
         
-        RealmManager(generator: MockDataGenerator()).fetchBooks{ items in
-            print("Items: \(items.count)")
-            print(items[5].book.title, "-", items[5].author.fullName)
-            
-        }
+//        RealmManager(generator: MockDataGenerator()).fetchBooks{ items in
+//            print("Items: \(items.count)")
+//            print(items[5].book.title, "-", items[5].author.fullName)
+//            
+//        }
         
     }
 

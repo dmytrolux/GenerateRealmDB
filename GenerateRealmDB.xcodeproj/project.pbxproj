@@ -177,13 +177,13 @@
 		669DFEFA30AF58AE00E1CCB5 /* GenerateRealmDB */ = {
 			isa = PBXGroup;
 			children = (
+				669DFEF830AF58AE00E1CCB5 /* SceneDelegate.swift */,
+				669DFEF330AF58AE00E1CCB5 /* AppDelegate.swift */,
 				6698BDC430B0602E00EB055C /* Services */,
 				669DFEF230AF58AE00E1CCB5 /* Helpers */,
 				6698BDA630AF759200EB055C /* Screens */,
 				6698BDA730AF759700EB055C /* Models */,
 				6698BDB030AF80C700EB055C /* Mocks */,
-				669DFEF830AF58AE00E1CCB5 /* SceneDelegate.swift */,
-				669DFEF330AF58AE00E1CCB5 /* AppDelegate.swift */,
 				669DFEF430AF58AE00E1CCB5 /* Assets.xcassets */,
 				669DFEF530AF58AE00E1CCB5 /* Info.plist */,
 				669DFEF730AF58AE00E1CCB5 /* LaunchScreen.storyboard */,
