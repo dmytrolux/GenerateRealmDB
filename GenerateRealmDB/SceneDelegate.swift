@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import RealmSwift
+import Realm
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -22,6 +24,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
         self.window = window
+        
+        realmTest()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -50,6 +54,25 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Called as the scene transitions from the foreground to the background.
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
+    }
+    
+    func realmTest(){
+        let realm = try! Realm()
+        
+        let book = BookObject()
+        book.title = "Test book title"
+        book.year = 1995
+        
+        let author = AuthorObject()
+        author.fullName = "Dmytro Sergiyovich Pryshliak"
+        author.books.append(book)
+        
+        try! realm.write {
+            realm.add(author)
+        }
+        
+        print("Authors: \(realm.objects(AuthorObject.self).count)")
+        print("Books: \(realm.objects(BookObject.self).count)")
     }
 
 
