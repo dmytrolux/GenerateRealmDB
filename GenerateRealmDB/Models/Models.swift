@@ -7,6 +7,8 @@
 
 import Foundation
 
+typealias BookItem = (book: Book, author: Author)
+
 struct Book {
     let title: String
     let year: Int

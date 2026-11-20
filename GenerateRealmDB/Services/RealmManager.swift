@@ -11,6 +11,7 @@ import RealmSwift
 
 protocol BookStorageProtocol {
     func generateData(completion: @escaping () -> () )
+    func fetchBooks(competion: @escaping ([BookItem]) -> () )
 }
 
 final class RealmManager: BookStorageProtocol{
@@ -53,6 +54,44 @@ final class RealmManager: BookStorageProtocol{
             
         }
     }
+    
+    func fetchBooks(competion: @escaping ([BookItem]) -> ()) {
+        DispatchQueue.global(qos: .userInitiated).async{
+            let currentTime = Date()
+            
+            let realm = try! Realm()
+            let bookObjects = realm.objects(BookObject.self)
+            var authorCache: [ObjectId: Author] = [:]
+            var items: [BookItem] = []
+            
+            for bookObject in bookObjects {
+                guard let authorObject = bookObject.authors.first else {continue}
+                
+                let author: Author
+                if let cachedAuthor = authorCache[authorObject.id] {
+                    author = cachedAuthor
+                } else {
+                    let books = authorObject.books.map { Book(title: $0.title, year: $0.year) }
+                    author = Author(fullName: authorObject.fullName, books: Array(books))
+                    authorCache[authorObject.id] = author
+                }
+                
+                let book = Book(title: bookObject.title, year: bookObject.year)
+                items.append(BookItem(book: book, author: author))
+                
+                
+                 
+            }
+            
+            print("Fetched books in \(Date().timeIntervalSince(currentTime)) sec")
+            
+            DispatchQueue.main.async {
+                competion(items)
+            }
+        }
+    }
+    
+    
     
     
 }
