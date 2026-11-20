@@ -28,17 +28,17 @@ final class MockDataGenerator: DataGeneratorProtocol {
         return authors
     }
     
-    func makeBooks() -> [Book] {
+    private func makeBooks() -> [Book] {
         var books: [Book] = []
         
-        for number in 1...countBooksInAuthor{
+        for _ in 1...countBooksInAuthor{
             let book = Book(title: makeBookTitle(), year: Int.random(in: 1991...2026))
             books.append(book)
         }
         return books
     }
     
-    func makeBookTitle() -> String {
+    private func makeBookTitle() -> String {
         let word0 = MockData.bookNameWord0.randomElement() ?? ""
         let word1 = MockData.bookNameWord1.randomElement() ?? ""
         let word2 = MockData.bookNameWord2.randomElement() ?? ""
