@@ -31,6 +31,11 @@ final class RealmManager: BookStorageProtocol{
             
             let realm = try! Realm()
             try! realm.write {
+                
+                if !self.isEmpty(){
+                    realm.deleteAll()
+                }
+                
                 for author in generatedAuthors {
                     let authorObject = AuthorObject()
                     authorObject.fullName = author.fullName

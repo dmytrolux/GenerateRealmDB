@@ -64,8 +64,13 @@ final class BooksViewController: BaseVC {
             self.items = items
             self.booksView.setLoading(false)
             self.booksView.configure(items: items)
-            self.navigationItem.rightBarButtonItem?.isHidden = true
+            self.updateGenerateButton()
         }
+    }
+    
+    private func updateGenerateButton(){
+        navigationItem.rightBarButtonItem?.title = items.isEmpty ? "Generate" : "Regenerate"
+        navigationItem.rightBarButtonItem?.isEnabled = true
     }
 }
 
