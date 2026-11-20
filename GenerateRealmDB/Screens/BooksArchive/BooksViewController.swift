@@ -8,6 +8,8 @@
 import UIKit
 
 final class BooksViewController: BaseVC {
+    
+    private let storage: BookStorageProtocol = RealmManager(generator: MockDataGenerator())
 
     private let booksView = BooksView()
     private var items: [(book: Book, author: Author)] = []
@@ -30,15 +32,17 @@ final class BooksViewController: BaseVC {
     @objc private func generateTapped() {
         navigationItem.rightBarButtonItem?.isEnabled = false
         booksView.setLoading(true)
-
-        // TODO: Замінити імітацію
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
-            guard let self = self else { return }
+        
+        storage.generateData { [weak self] in
+            guard let self else { return }
+            // TODO: На UI поки мок дані
             self.items = MockLib.bookPairs
             self.booksView.setLoading(false)
             self.booksView.configure(items: self.items)
             self.navigationItem.rightBarButtonItem?.isHidden = true
         }
+        
+        
     }
 }
 

@@ -17,7 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
  
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)        
-//        let vc = BookDetailViewController(book: MockLib.authors[0].books[0], author: MockLib.authors[0])
+
         let vc = BooksViewController()
         let navigationController = BaseNC(rootViewController: vc)
         
@@ -25,7 +25,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window.makeKeyAndVisible()
         self.window = window
         
-        realmManagerTest()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -54,20 +53,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Called as the scene transitions from the foreground to the background.
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
-    }
-    
-    func realmManagerTest(){
-       let manager = RealmManager(generator: MockDataGenerator())
-        print("Start...")
-        
-        manager.generateData {
-            let realm = try! Realm()
-            print("authors: \(realm.objects(AuthorObject.self).count)")
-            print("Books: \(realm.objects(BookObject.self).count)")
-        }
-        
-        
-        
     }
 
 

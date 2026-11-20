@@ -86,8 +86,8 @@
 		6698BDA630AF759200EB055C /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				6698BDBD30AFB2D000EB055C /* Author */,
 				6698BDB630AF9B9900EB055C /* BooksArchive */,
+				6698BDBD30AFB2D000EB055C /* Author */,
 				6698BDB330AF85F300EB055C /* BookDetail */,
 			);
 			path = Screens;
